@@ -1,5 +1,52 @@
 import numpy as np
 import pandas as pd
+import matplotlib.pyplot as plt
+File_path = "blood_pressure_data.csv"
+data = pd.read_csv("blood_pressure_data.csv")
+print("Original Data:")
+print(data.head())
+
+data = data[
+    (data["Systolic_BP"] > 0) &
+    (data["Diastolic_BP"] > 0) &
+    (data["Heart_Rate"] > 0) &
+    (data["SpO2"] > 0) &
+    (data["Temperature"] > 0) & 
+    (data["Resp_Rate"] > 0)
+]
+
+data. fillna(method="ffill", inplace=True)
+print("\nCleaned Data:")
+print(data.head())
+
+ean_sys = np.mean(data["Systolic_BP"])
+mean_hr = np.mean(data["Heart_Rate"])
+print("\nAverage Systolic BP:", round(mean_sys), 2)
+print("Average Heart Rate:", round(mean_hr, 2))
+
+plt.figure(figsize=(10,5))
+plt.plot(data["Time"], data["Systolic_BP"])
+plt.plot(data["Time"], data["Diastolic_BP"])
+plt.xlabel("Time")
+plt.ylabel("Blood Pressure")
+plt.title("Blood Pressure Monitoring")
+plt.show()
+
+plt.figure(figsize=(10,5))
+plt.plot(data["Time"], data["Heart_Rate"])
+plt.xlabel("Time")
+plt.ylabel("Heart Rate (BPM)")
+plt.title("Heart Rate Monitoring")
+plt.show()
+
+plt.figure(figsize=(10,5))
+plt.plot(data["Time"], data["SpO2"])
+plt.xlabel("Time")
+plt.ylabel("SpO2 (%)")
+plt.title("Oxygen Level Monitoring")
+plt.show
+            
+
 
 # -------- Generate Data --------
 n = 60   # 60 rows of data
@@ -162,3 +209,4 @@ model.fit(X_train, y_train)
 y_pred = model.predict(X_test)
 print("\nML Model Accuracy:", accuracy_score(y_test, y_pred))
  
+
