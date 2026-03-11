@@ -49,7 +49,8 @@ It automatically:
 - NumPy  
 - scikit-learn  
 - CSV (Data Storage)  
-- Visual Studio Code  
+- Visual Studio Code
+- SQL  
 
 ---
 
