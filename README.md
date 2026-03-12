@@ -21,6 +21,38 @@ It automatically:
 ✔ Vital signs data collection  
 ✔ CSV data storage and export  
 ✔ Automated alert generation  
+
+
+## Tech Stack 
+- Python
+- Pandas
+- SQL
+- Power BI
+- CSV Dataset
+  Machine Learning
+
+  ## Input data
+  This Input data used in the project includes patient vital signs Such as:
+
+  - Blood Pressure(BP)
+  - Heart Rate
+  - Spo2
+  - Temperature
+
+  Files used:
+  - Blood_Pressure_data.csv
+  - bp_alerts.csv
+
+
+    ## Project structure
+
+    - Vital_monitoring_analyzer.py - Python analysis script
+    - blood_pressure_data.CSV - Patient vital dataset
+    - bp_alerts.csv - Generated alert data
+    - SQL query screenshots
+    - Power BI dashboard visuals are included in this project to analyze patient vital signs and blood pressure alerts.
+  
+- P
 ✔ Blood pressure risk classification  
 ✔ Machine Learning prediction model  
 ✔ Console-based analytics (VS Code compatible)  
